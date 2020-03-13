@@ -1,8 +1,10 @@
 [tool.poetry]
-name = "very_cool_project"
+name = "meadow"
 version = "0.1.0"
-description = ""
+description = "Best digital library ever"
 authors = ["Digital gachilib <egor.birdi7@gmail.com>"]
+readme = "README.md"
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -11,6 +13,7 @@ flake8 = "^3.7.9"
 pre-commit = "^1.20.0"
 isort = "^4.3.21"
 pylint = "^2.4.4"
+django = "^3.0.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"
