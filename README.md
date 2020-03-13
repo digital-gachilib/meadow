@@ -7,7 +7,6 @@ Best digital library ever. Uses [poetry](http://poetry.eustace.io) for package-m
 1. The poetry should be installed in the system. [How to?](https://python-poetry.org/docs/#installation). Or you can run `bash setup.d/install_all.sh`. This script installs poetry and python3.8, if they aren't accessible
 
 
-
 ## FAQ
 # How to
 
