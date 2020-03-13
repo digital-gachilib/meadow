@@ -2,10 +2,10 @@
 name = "very_cool_project"
 version = "0.1.0"
 description = ""
-authors = ["Egor <egor.birdi7@gmail.com>"]
+authors = ["Digital gachilib <egor.birdi7@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 black = "^19.10b0"
 flake8 = "^3.7.9"
 pre-commit = "^1.20.0"
@@ -47,4 +47,3 @@ force_grid_wrap = 0
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
-
