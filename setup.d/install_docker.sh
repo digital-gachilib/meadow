@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Installing docker..."
 apt-get remove docker docker-engine docker.io containerd runc
 apt-get update

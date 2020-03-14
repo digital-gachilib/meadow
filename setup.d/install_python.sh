@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Installing python3.8..."
 apt update
 apt install -y software-properties-common
