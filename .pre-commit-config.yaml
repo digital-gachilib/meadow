@@ -4,13 +4,13 @@ repos:
     hooks:
       - id: black
         language_version: python3.8
-        files: bus
+        files: meadow
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
     hooks:
       - id: flake8
         args: ['--config=setup.cfg']
-        files: bus
+        files: meadow
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: check-merge-conflict
