@@ -10,7 +10,9 @@ Best digital library ever. Uses [black](https://github.com/psf/black) and [isort
 `. .venv/bin/activate`
 3. Install all libraries
 `pip install -r requirements.txt`
-4. Everything is installed! Run `python meadow/manage.py migrate` to apply migrations and `python meadow/manage.py runserver` to run server locally
+4. Install pre-commit hooks
+`pre-commit install`
+5. Everything is installed! Run `python meadow/manage.py migrate` to apply migrations and `python meadow/manage.py runserver` to run server locally
 
 ## New dependency?
 
