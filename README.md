@@ -26,3 +26,8 @@ All commands should be runned inside project's directory
 4. Push
 `git push --set-upstream origin $(git_current_branch)`
 5. Open pull-request. You can use a web GUI of github, or with [hub](https://hub.github.com) with command `hub pull-request -op -m "New cool PR!"`
+
+## Some Q&A
+
+* How to update locally project?
+`git pull --rebase --autostash`
