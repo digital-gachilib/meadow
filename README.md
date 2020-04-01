@@ -4,6 +4,8 @@ Best digital library ever. Uses [black](https://github.com/psf/black) and [isort
 
 ## How to develop?
 
+All commands should be runned inside project's directory
+
 1. Create virtual environment
 `python3 -m venv .venv`
 2. Activate venv
