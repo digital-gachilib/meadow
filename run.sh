@@ -1,2 +1,2 @@
 #!/bin/bash
-poetry run meadow/manage.py runserver
+python meadow/manage.py runserver
