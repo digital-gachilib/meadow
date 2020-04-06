@@ -14,7 +14,7 @@ All commands should be runned inside project's directory
 `pip install -r requirements.txt`
 4. Install pre-commit hooks
 `pre-commit install`
-5. Everything is installed! Run `python meadow/manage.py migrate` to apply migrations and `python meadow/manage.py runserver` to run server locally
+5. Everything is installed! Run `python meadow/manage.py migrate` to apply migrations and `python meadow/manage.py runserver` to run server locally. (the database should listen on port ('localhost', 5432), you can run it using [run_postgres.sh](init.d/run_postgres.sh) script.
 
 ## New dependency?
 
