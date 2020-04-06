@@ -1,4 +1,4 @@
-from polls.models import Book
+from meadow.models import Book
 
 
 def search_by_title(title: str):

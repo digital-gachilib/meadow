@@ -1,6 +1,5 @@
-from book_searcher import search_by_title
-from django.http import HttpResponse
+from meadow.utils.book_searcher import search_by_title
 
 
 def search():
-    search_by_title("")
+    return search_by_title("")
