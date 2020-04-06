@@ -15,9 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from meadow import views
 
-urlpatterns = [
-    path("book_searcher", views.search, name="search"),
-    path("admin/", admin.site.urls),
-]
+urlpatterns = [path("book_searcher/<str:title>", views.search, name="search"), path("admin/", admin.site.urls)]
