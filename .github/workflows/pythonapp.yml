@@ -2,8 +2,6 @@ name: Python application
 
 on:
   push:
-    branches: [ master, develop ]
-    
 
 jobs:
   Lint_and_test:
