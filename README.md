@@ -4,6 +4,11 @@ Best digital library ever. Uses [black](https://github.com/psf/black) and [isort
 
 ## How to develop?
 
+#### Commit messages' style
+The project follows [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) style for commit messages. 
+This naming isn't mandatory for regular commits but very appreciated among team members. However, for Pull Request's titles this style is **very-very** recommended.
+
+#### Project first setup
 All commands should be runned inside project's directory
 
 1. Create virtual environment
