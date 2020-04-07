@@ -20,7 +20,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 from meadow import views
 
 urlpatterns = [
-    path("book_searcher/<str:title>", views.search, name="search"),
+    path("api/book_searcher/", views.search, name="search"),
     path("admin/", admin.site.urls),
     path("api-token-auth/", obtain_auth_token, name="api_token_auth"),
 ]
