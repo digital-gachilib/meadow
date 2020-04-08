@@ -4,20 +4,10 @@ from meadow.models import Book, BookAuthor
 
 
 class BookSerializer(ModelSerializer):
-    # todo: add inner serializer for author field
-    # i.e. instead of
-    # { "id": 2, "title": "ad", "description": "dsfd"}
-    # we should return
-    # { "id": 2, "title": "ad", "description": "dsfd",
-    #   "author": { "first_name": "SD", "last_name": "DSFDS" }
-    # }
-    # might be useful in solving this task:
-    # https://www.django-rest-framework.org/tutorial/5-relationships-and-hyperlinked-apis/
-    # I didn't manage to get thought it yet
-
     class Meta:
         model = Book
-        fields = ["id", "title", "description"]
+        fields = ["id", "title", "description", "author"]
+        depth = 1
 
 
 class BookAuthorSerializer(ModelSerializer):
