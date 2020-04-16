@@ -24,5 +24,7 @@ def search(request: Request):
 @permission_classes([IsAuthenticated])
 def preview(request: Request):
     book_id = request.query_params.get("id", "")
+    if book_id is None:
+        raise ValueError("No id provided!")
     book = book_preview(book_id)
     return JsonResponse(book)
