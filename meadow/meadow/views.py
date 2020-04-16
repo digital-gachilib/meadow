@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 
 from meadow.serializers import BookSerializer
-from meadow.utils.book_searcher import search_by_title
+from meadow.utils.book_searcher import search_by_title, book_preview
 
 
 @api_view(["GET"])
@@ -17,3 +17,14 @@ def search(request: Request):
     serializer = BookSerializer(books, many=True)
 
     return JsonResponse(serializer.data, safe=False)
+
+
+@api_view(["GET"])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def preview(request: Request):
+    if "id" not in request.query_params.keys():
+        raise ValueError("No id provided!")
+    book_id = request.query_params.get("id", "")
+    book = book_preview(book_id)
+    return JsonResponse(book)
