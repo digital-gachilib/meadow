@@ -23,8 +23,8 @@ def search(request: Request):
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def preview(request: Request):
-    book_id = request.query_params.get("id", "")
-    if book_id is None:
+    if "id" not in request.query_params.keys():
         raise ValueError("No id provided!")
+    book_id = request.query_params.get("id", "")
     book = book_preview(book_id)
     return JsonResponse(book)
