@@ -15,6 +15,7 @@ def search_by_title(title: str) -> List[Book]:
     return books
 
 
-def book_preview(book_id: int) -> {Book.title, BookAuthor.first_name, BookAuthor.last_name, Book.description}:
+def book_preview(book_id: int) -> dict:
     book = Book.objects.get(id=book_id)
-    return {book.title, book.author.first_name, book.author.last_name, book.description}
+    return {'title': book.title, 'author': {'name': book.author.first_name, 'surname': book.author.last_name},
+            'description': book.description}

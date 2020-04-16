@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 
 from meadow.serializers import BookSerializer
-from meadow.utils.book_searcher import search_by_title
+from meadow.utils.book_searcher import search_by_title, book_preview
 
 
 @api_view(["GET"])
