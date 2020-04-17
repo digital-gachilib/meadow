@@ -9,11 +9,15 @@ from meadow.utils.book_searcher import search_by_title
 
 
 @api_view(["GET"])
-@authentication_classes([TokenAuthentication])
-@permission_classes([IsAuthenticated])
+# @authentication_classes([TokenAuthentication])
+# @permission_classes([IsAuthenticated])
 def search(request: Request):
     title = request.query_params.get("title", "")
     books = search_by_title(title)
     serializer = BookSerializer(books, many=True)
 
     return JsonResponse(serializer.data, safe=False)
+
+@api_view(["POST"])
+def upload_book(request: Request):
+    pass
