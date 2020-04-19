@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from meadow.models import Book, BookAuthor
+from meadow.models import Book
 
 
 class BookSerializer(ModelSerializer):
@@ -8,9 +8,3 @@ class BookSerializer(ModelSerializer):
         model = Book
         fields = ["id", "title", "description", "author"]
         depth = 1
-
-
-class BookAuthorSerializer(ModelSerializer):
-    class Meta:
-        model = BookAuthor
-        fields = ["first_name", "last_name"]
