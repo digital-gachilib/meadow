@@ -26,7 +26,7 @@ jobs:
       run: |
         black --check .
     - name: Run tests
-      run: python meadow/manage.py test meadow
+      run: python meadow/manage.py test --noinput meadow
 
   # SonarCloud_scan:
   #   runs-on: ubuntu-latest
