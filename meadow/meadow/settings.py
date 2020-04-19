@@ -90,6 +90,7 @@ DATABASES = {
         "USER": "postgres",
         "PASSWORD": "postgres",
         "NAME": "meadow",
+        "TEST": {"ENGINE": "django.db.backends.sqlite3"},
     }
 }
 
