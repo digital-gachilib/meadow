@@ -1,2 +1,2 @@
+from .book import BookAuthorFactory, BookFactory
 from .user import UserFactory
-from .book import BookFactory, BookAuthorFactory
