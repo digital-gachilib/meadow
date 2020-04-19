@@ -20,3 +20,4 @@ class Book(models.Model):
     isbn_13 = models.CharField(max_length=15)
     description = models.TextField()
     author = models.ForeignKey(BookAuthor, related_name="books", on_delete=models.CASCADE)
+    download_link = "https://loremips.um"
