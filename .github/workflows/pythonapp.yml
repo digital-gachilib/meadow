@@ -27,6 +27,10 @@ jobs:
         black --check .
     - name: Run tests
       run: python meadow/manage.py test 
+      
+  SonarCloud_scan:
+    runs-on: ubuntu-latest
+    steps:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:
