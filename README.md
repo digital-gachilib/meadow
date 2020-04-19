@@ -1,5 +1,6 @@
 # Meadow
 ![Python application](https://github.com/digital-gachilib/meadow/workflows/Python%20application/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=digital-gachilib_meadow&metric=alert_status)](https://sonarcloud.io/dashboard?id=digital-gachilib_meadow)
 
 Best digital library ever. Uses [black](https://github.com/psf/black) and [isort](https://github.com/timothycrosley/isort) with [seed-isort-config](https://github.com/asottile/seed-isort-config) for code-formatting, and [flake8](http://flake8.pycqa.org/en/latest/) for linting. [Pre-commit](https://pre-commit.com) hooks are installed for every tool.
 
