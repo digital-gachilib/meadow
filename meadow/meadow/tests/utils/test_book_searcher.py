@@ -34,7 +34,7 @@ class BookSearchTestCase(TestCase):
         self.assertEqual(len(books), len(result))
 
     def test_search_some_unique_title(self):
-        books =[BookFactory() for _ in range(5)]
+        books = [BookFactory() for _ in range(5)]
         book_to_search = books[1]
         title = book_to_search.title
         result = search_by_title(title)
@@ -45,4 +45,4 @@ class BookSearchTestCase(TestCase):
         [BookFactory() for _ in range(5)]
         title = "Some cook title which doesn't exist in DB"
         result = search_by_title(title)
-        self.assertEqual(result,  [])
+        self.assertEqual(result, [])
