@@ -17,12 +17,3 @@ def search(request: Request):
     serializer = BookSerializer(books, many=True)
 
     return JsonResponse(serializer.data, safe=False)
-
-
-@api_view(["GET"])
-@authentication_classes([TokenAuthentication])
-@permission_classes([IsAuthenticated])
-def preview(request: Request):
-    book_id = request.query_params.get("id", "")
-    book = book_preview(book_id)
-    return JsonResponse(book)
