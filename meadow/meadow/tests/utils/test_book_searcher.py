@@ -2,7 +2,7 @@ from django.test import TestCase
 
 from meadow.models import Book
 from meadow.tests.factories.book import BookFactory
-from meadow.utils.book_searcher import book_preview
+from meadow.utils.book_searcher import book_preview, search_by_title
 
 
 class BookPreviewTestCase(TestCase):
@@ -24,3 +24,25 @@ class BookPreviewTestCase(TestCase):
         # the function should raise an exception if the id is invalid
         with self.assertRaises(Book.DoesNotExist):
             book_preview(invalid_id)
+
+
+class BookSearchTestCase(TestCase):
+    def test_search_empty_title(self):
+        books = [BookFactory() for _ in range(5)]
+        title = ""
+        result = search_by_title(title)
+        self.assertEqual(len(books), len(result))
+
+    def test_search_some_unique_title(self):
+        books =[BookFactory() for _ in range(5)]
+        book_to_search = books[1]
+        title = book_to_search.title
+        result = search_by_title(title)
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0].title, title)
+
+    def test_search_title_doesnot_exist(self):
+        [BookFactory() for _ in range(5)]
+        title = "Some cook title which doesn't exist in DB"
+        result = search_by_title(title)
+        self.assertEqual(result,  [])
