@@ -22,3 +22,10 @@ class SearchViewTestCase(AuthorizedTestCase):
         response_json = response.json()
         self.assertEqual(len(response_json), 1)
         self.assertEqual(response_json[0]["title"], book_to_search.title)
+
+    def test_search_title_doesnot_exist(self):
+        [BookFactory() for _ in range(5)]
+        response = self.client.get(reverse("search"), {"title": "Some cook title which doesn't exist in DB"})
+
+        response_json = response.json()
+        self.assertEqual(response_json, [])
