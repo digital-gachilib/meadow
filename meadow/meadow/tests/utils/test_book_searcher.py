@@ -26,7 +26,6 @@ class BookPreviewTestCase(TestCase):
             book_preview(invalid_id)
 
 
-
 class BookSearchTestCase(TestCase):
     def test_search_empty_title(self):
         books = [BookFactory() for _ in range(5)]
@@ -47,4 +46,3 @@ class BookSearchTestCase(TestCase):
         title = "Some cook title which doesn't exist in DB"
         result = search_by_title(title)
         self.assertEqual(result, [])
-
