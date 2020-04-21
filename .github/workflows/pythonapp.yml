@@ -37,7 +37,16 @@ jobs:
       run: |
         black --check .
     - name: Run tests
-      run: python meadow/manage.py test --noinput meadow
+      run: |
+        coverage run meadow/manage.py test --noinput -v=3 meadow
+    - name: Generate html
+      run: |
+        coverage html
+    - name: Save coverage html report to artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: htmlcov
+        path: htmlcov
 
   # SonarCloud_scan:
   #   runs-on: ubuntu-latest
