@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "meadow",
     "corsheaders",
+    "import_export",
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
