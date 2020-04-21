@@ -36,6 +36,9 @@ jobs:
     - name: Lint with black
       run: |
         black --check .
+    - name: Build the project
+      run: |
+        python meadow/manage.py collectstatic
     - name: Run tests
       run: |
         coverage run meadow/manage.py test --noinput -v=3 meadow
