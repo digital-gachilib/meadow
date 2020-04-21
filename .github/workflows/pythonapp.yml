@@ -41,7 +41,7 @@ jobs:
         python meadow/manage.py collectstatic
     - name: Run tests
       run: |
-        coverage run meadow/manage.py test --noinput -v=3 meadow
+        coverage run meadow/manage.py test --noinput -v=2 meadow
     - name: Generate html
       run: |
         coverage html
