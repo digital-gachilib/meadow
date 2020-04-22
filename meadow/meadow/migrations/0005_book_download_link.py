@@ -6,13 +6,11 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('meadow', '0004_auto_20200421_1906'),
+        ("meadow", "0004_auto_20200421_1906"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='book',
-            name='download_link',
-            field=models.CharField(default='', max_length=200),
+            model_name="book", name="download_link", field=models.CharField(default="", max_length=200),
         ),
     ]
