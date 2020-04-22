@@ -23,4 +23,5 @@ def book_preview(book_id: int) -> dict:
         "description": book.description,
         "isbn_10": book.isbn_10,
         "isbn_13": book.isbn_13,
+        "download_link": book.download_link,
     }
