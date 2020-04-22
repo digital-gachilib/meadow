@@ -14,3 +14,5 @@ class BookFactory(factory.DjangoModelFactory):
 
     author = factory.SubFactory(BookAuthorFactory)
     title = factory.Sequence(lambda n: f"Book title #{n}")
+    isbn_10 = factory.Sequence(lambda n: n)
+    isbn_13 = factory.Sequence(lambda n: f"isbn_13 #{n}")
