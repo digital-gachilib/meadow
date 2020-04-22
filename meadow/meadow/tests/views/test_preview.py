@@ -25,3 +25,7 @@ class PreviewViewTestCase(AuthorizedTestCase):
         # the function should raise an exception if the id is invalid
         with self.assertRaises(Book.DoesNotExist):
             self.client.get(reverse("preview"), {"id": invalid_id})
+
+    def test_book_preview_no_id(self):
+        with self.assertRaises(ValueError, msg="No id provided!"):
+            self.client.get(reverse("preview"), {})
