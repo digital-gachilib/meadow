@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
     dependencies = [("meadow", "0003_book_isbn_10")]
 
     operations = [
-        migrations.AlterField(model_name="book", name="isbn_10", field=models.IntegerField(unique=True)),
-        migrations.AlterField(model_name="book", name="isbn_13", field=models.CharField(max_length=15, unique=True)),
+        migrations.AddField(
+            model_name="book", name="download_link", field=models.CharField(default="", max_length=200)
+        )
     ]
