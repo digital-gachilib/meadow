@@ -21,4 +21,7 @@ def book_preview(book_id: int) -> dict:
         "title": book.title,
         "author": {"first_name": book.author.first_name, "last_name": book.author.last_name},
         "description": book.description,
+        "isbn_10": book.isbn_10,
+        "isbn_13": book.isbn_13,
+        "download_link": book.download_link,
     }

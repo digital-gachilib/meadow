@@ -36,8 +36,20 @@ jobs:
     - name: Lint with black
       run: |
         black --check .
+    - name: Build the project
+      run: |
+        python meadow/manage.py collectstatic
     - name: Run tests
-      run: python meadow/manage.py test --noinput meadow
+      run: |
+        coverage run meadow/manage.py test --noinput -v=2 meadow
+    - name: Generate html
+      run: |
+        coverage html
+    - name: Save coverage html report to artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: htmlcov
+        path: htmlcov
 
   # SonarCloud_scan:
   #   runs-on: ubuntu-latest

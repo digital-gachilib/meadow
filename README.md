@@ -7,8 +7,20 @@ Best digital library ever. Uses [black](https://github.com/psf/black) and [isort
 ## How to develop?
 
 #### Commit messages' style
-The project follows [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) style for commit messages. 
+The project follows [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) style for commit messages.
 This naming isn't mandatory for regular commits but very appreciated among team members. However, for Pull Request's titles this style is **very-very** recommended.
+
+
+#### Tests
+Simply tests
+```
+python meadow/manage.py test -v=3 meadow
+```
+
+With coverage: firsly, the following command, then `coverage html`, and then open the file `htmlcov/index.html` in your browser
+```
+coverage run meadow/manage.py test -v=3 meadow && coverage html
+```
 
 #### Project first setup
 All commands should be runned inside project's directory
