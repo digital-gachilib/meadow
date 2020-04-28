@@ -6,13 +6,9 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('meadow', '0006_mmake_isbn_charfield'),
+        ("meadow", "0006_mmake_isbn_charfield"),
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='book',
-            name='is_approved',
-            field=models.BooleanField(default=False),
-        ),
+        migrations.AddField(model_name="book", name="is_approved", field=models.BooleanField(default=False),),
     ]
