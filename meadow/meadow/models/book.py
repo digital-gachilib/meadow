@@ -20,3 +20,4 @@ class Book(models.Model):
 
     # todo: blank=False
     download_link = models.CharField(max_length=200, default="")
+    is_approved = models.BooleanField(default=False)

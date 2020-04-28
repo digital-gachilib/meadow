@@ -10,13 +10,15 @@ def search_by_title(title: str) -> List[Book]:
 
     books = []
     for book in Book.objects.all():
-        if book.title.lower().count(title) > 0:
+        if book.title.lower().count(title) > 0 and book.is_approved:
             books.append(book)
     return books
 
 
 def book_preview(book_id: int) -> dict:
     book = Book.objects.get(id=book_id)
+    if not book.is_approved:
+        raise FileNotFoundError("Book is not approved!")
     return {
         "title": book.title,
         "author": {"first_name": book.author.first_name, "last_name": book.author.last_name},
