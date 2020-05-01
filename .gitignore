@@ -130,6 +130,6 @@ dmypy.json
 .idea
 .vscode
 
-htmlmcov
+htmlcov
 
 *static*
