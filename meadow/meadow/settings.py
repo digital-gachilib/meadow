@@ -89,13 +89,16 @@ WSGI_APPLICATION = "meadow.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "HOST": "localhost",
         "USER": "postgres",
         "PASSWORD": "postgres",
         "NAME": "meadow",
     }
 }
 
+if os.environ.get("IN_DOCKER"):
+    DATABASES["default"]["HOST"] = "db"
+else:
+    DATABASES["default"]["HOST"] = "localhost"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
