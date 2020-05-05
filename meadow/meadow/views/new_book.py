@@ -26,5 +26,5 @@ def create_new_book(request: Request):
     book_description = request.query_params.get("description", "")
     author_last_name = request.query_params.get("last_name", "")
     author_first_name = request.query_params.get("first_name", "")
-    book = create_new_book(book_title,book_link, book_description, author_first_name, author_last_name)
+    book = create_new_book(book_title, book_link, book_description, author_first_name, author_last_name)
     return JsonResponse(book)
