@@ -17,11 +17,14 @@ def create_new_book(request: Request):
         raise ValueError("No last_name provided!")
     if "link" not in request.query_params.keys():
         raise ValueError("No link provided!")
+    if "title" not in request.query_params.keys():
+        raise ValueError("No title provided!")
     if "description" not in request.query_params.keys():
         raise ValueError("No description provided!")
     book_link = request.query_params.get("link", "")
+    book_title = request.query_params.get("title", "")
     book_description = request.query_params.get("description", "")
     author_last_name = request.query_params.get("last_name", "")
     author_first_name = request.query_params.get("first_name", "")
-    book = create_new_book(book_link, book_description, author_first_name, author_last_name)
+    book = create_new_book(book_title,book_link, book_description, author_first_name, author_last_name)
     return JsonResponse(book)
