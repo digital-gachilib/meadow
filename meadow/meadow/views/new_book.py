@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 
+from meadow.serializers import BookSerializer
 from meadow.utils.new_book import create_new_book
 
 
@@ -27,4 +28,6 @@ def new_book(request: Request):
     author_last_name = request.query_params.get("last_name", "")
     author_first_name = request.query_params.get("first_name", "")
     book = create_new_book(book_title, book_link, book_description, author_first_name, author_last_name)
-    return JsonResponse(book)
+    serializer = BookSerializer(book)
+    
+    return JsonResponse(serializer.data)
