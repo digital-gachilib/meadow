@@ -29,5 +29,5 @@ def new_book(request: Request):
     author_first_name = request.query_params.get("first_name", "")
     book = create_new_book(book_title, book_link, book_description, author_first_name, author_last_name)
     serializer = BookSerializer(book)
-    
+
     return JsonResponse(serializer.data)
