@@ -10,7 +10,7 @@ from meadow.utils.new_book import create_new_book
 @api_view(["POST"])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
-def create_new_book(request: Request):
+def new_book(request: Request):
     if "first_name" not in request.query_params.keys():
         raise ValueError("No first_name provided!")
     if "last_name" not in request.query_params.keys():
