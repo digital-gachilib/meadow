@@ -7,7 +7,7 @@ from rest_framework.request import Request
 from meadow.utils.new_book import create_new_book
 
 
-@api_view(["GET"])
+@api_view(["POST"])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def create_new_book(request: Request):
