@@ -7,9 +7,13 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    volumes:
+      - meadowdata:/var/lib/postgresql/data
   meadow:
     image: birdi7/meadow
     ports:
       - "8000:8000"
     depends_on:
       - db
+volumes:
+  meadowdata:
