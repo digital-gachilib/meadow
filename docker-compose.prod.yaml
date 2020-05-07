@@ -8,7 +8,6 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   meadow:
-    build: .
     image: birdi7/meadow
     ports:
       - "8000:8000"
