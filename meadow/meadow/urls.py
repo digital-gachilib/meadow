@@ -22,6 +22,7 @@ from meadow import views
 urlpatterns = [
     path("api/book_searcher/", views.search, name="search"),
     path("api/book_preview/", views.preview, name="preview"),
+    path("api/new_book/", views.new_book, name="newbook"),
     path("admin/", admin.site.urls),
     path("api-token-auth/", obtain_auth_token, name="api_token_auth"),
 ]
