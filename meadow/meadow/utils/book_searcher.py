@@ -1,3 +1,4 @@
+from operator import attrgetter
 from typing import List
 
 from meadow.models import Book
@@ -5,7 +6,8 @@ from meadow.models import Book
 
 def search_by_title(title: str) -> List[Book]:
     if not title:
-        return list(Book.objects.all())
+        return list(filter(attrgetter("is_approved"), Book.objects.all()))
+
     title = title.lower()
 
     books = []
