@@ -16,4 +16,6 @@ def search(request: Request):
     books = search_by_title(title)
     serializer = BookSerializer(books, many=True)
 
+    print(f"returning {books}")
+
     return JsonResponse(serializer.data, safe=False)

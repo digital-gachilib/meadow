@@ -11,10 +11,10 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
 
     # todo: unique=Tru
-    isbn_10 = models.CharField(max_length=10)
+    isbn_10 = models.CharField(blank=True, max_length=10)
 
     # todo: unique=Tru
-    isbn_13 = models.CharField(max_length=13)
+    isbn_13 = models.CharField(blank=True, max_length=13)
     description = models.TextField()
     author = models.ForeignKey(BookAuthor, related_name="books", on_delete=models.CASCADE)
 
